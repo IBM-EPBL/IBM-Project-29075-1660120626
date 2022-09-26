@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    
+{% endblock %}
+
+{% block body %}
+<header class="header" id="header">
+    <a href="#" class="logo" style="margin-left: 80px;">Developer</a>
+    <nav class="nav-items">
+      <a href="#header" class="navbtn">Home</a>
+      <a href="#content" class="navbtn">About</a>
+      <a href="#foot" class="navbtn">Contact</a>
+      <a href="{{ url_for('login') }}" id="login" name = "login">Login</a>
+      <a href="{{ url_for('signup') }}" id="signup" name = "signup">Signup</a>
+    </nav>
+</header>
+
+<main style="width: 90%; margin: auto;" id="content">
+    <div class="intro">
+      <h1>A Web Developer</h1>
+      <p>I am a web developer and I love to create websites.</p>
+    </div>
+    
+    <div class="about-me">
+      <div class="about-me-text">
+        <h2 style="color: white;">About  Me</h2>
+        <br>
+        <p style="font-size: 20px;">I am a very good developer and I am always looking for new projects.</p> 
+        <p style="font-size: 20px;">As a web designer,my objective is to make a positive impact on clients,Co-works and 
+          the internet using my Skills and experience to design compelling and attractive websites</p>
+        
+      </div>
+      <div style="margin-left: 100px;">
+      
+    </div>
+</main>
+
+<footer class="footer" id="foot">
+    <div class="copy">&copy; 2022 Developer</div>
+    <div class="bottom-links">
+      <div class="links">
+        <a href="#header">Home</a>
+        <a href="#content">About</a>
+        <a href="#foot">Contact</a>
+      </div>
+      <div class="links">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+</footer>
+{% endblock %}
