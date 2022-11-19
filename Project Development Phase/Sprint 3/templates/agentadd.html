@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Care Registry</title>
+  <link rel="stylesheet" href="../static/style.css">
+ 
+</head>
+<body>
+  <body>
+    <div class="diff">
+      <a href="{{url_for('admin')}}" style="padding:10px;background-color:rgb(125, 250, 125);;color:white ; margin-top: 20px;">Home Page</a>
+  </div>
+    <h1 style="font-size: 30px;">Customer Care Registry</h1>
+    <br>
+  
+    <div class="main-block">
+        <h1>ADD AGENT</h1>
+        <form action="{{ url_for('addagent') }}" method="POST">
+          
+        
+          <input type="text" name="agentname" id="name" placeholder="Agent Name" required/>
+         
+          <input type="text" name="agentmail" id="mail" placeholder="Agent E-Mail" required/>
+        
+          <input type="password" name="password" id="passsword" placeholder="Password" required/>
+          <hr>
+          
+          <hr>
+          <div class="btn-block">
+            <button type="submit" href="/">ADD</button>
+          </div>
+        </form>
+      </div>
+      
+</body>
+
+  
+</body>
+</html>
