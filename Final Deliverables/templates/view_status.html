@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Care Registry</title>
+    <link rel="stylesheet" href="../static/table.css">
+    <link rel="stylesheet" href="../static/index.css">
+  
+</head>
+<body>
+    <div class="homebutton"><a href="{{url_for('userhome',name=nam)}}">User Home Page</a></div>
+
+    <h1 style="font-size: 30px;">Customer Care Registry</h1>
+    <br>
+    <h1>{{nam}}'s  Complaint Status</h1>
+            <table  id="customers">
+                <thead>
+                    <tr>
+                    <th>S.No</th>
+                    <th>Complaint ID</th>
+                    <th>Customer Name</th>
+                    
+                    <th>Complaint </th>
+                    <th>Complaint Detail</th>
+                    <th>Agent </th>
+                    <th>Solution</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for res in comp %}
+                        {% set i=loop.index %}
+                    <tr>
+                        <td>{{i}}</td>
+                        <td>{{res['COMPLAINT_ID']}}</td>
+                        <td>{{res['CUSTOMER_NAME']}}</td>
+                       
+                        <td>{{res['COMPLAINT']}}</td>
+                        <td>{{res['COMPLAINT_DETAIL']}}</td>
+                        <td>{{res['AGENT']}}</td>
+                        <td>{{res['SOLUTION']}}</td>
+                        
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+           
+        
+    
+</body>
+</html>

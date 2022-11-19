@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+html {
+    min-height: 100%;
+    background: url(../static/image/a.png) rgba(243, 246, 245, 0.579);
+    background-size: cover;
+    background-blend-mode: overlay;
+  }
+body{
+    font-family:  'Nunito Sans', sans-serif;
+    padding:30px;
+    
+ 
+}
+ 
+
+
+h1{
+ text-align: center;
+ font-size:50px
+}
+.box a{
+    text-decoration:none;
+    padding: 4% 10%;
+    background-color:rgb(98, 98, 246);
+    margin: 20px;
+    color:white;
+    font-weight:bold;
+  
+}
+.box a:hover{
+    background-color:rgb(125, 250, 125);
+    color:rgb(98, 98, 246)
+
+}
+.box{
+ display:flex;
+ justify-content:center;
+ flex-direction:row;
+}
+.team{
+    padding-top:50px;
+    text-align:center;
+}
+span{
+    padding:10px;
+    color:rgb(34, 2, 98);
+}
+h3{
+    font-size:30px
+}
+.diff{
+    position:absolute;
+}
+.flash{
+    padding: 10px;
+    background-color:rgb(159, 249, 159);
+    color:rgb(1, 65, 8);
+    
+}
+.homebutton{
+    position: absolute;
+    
+    background-color:rgb(76, 236, 76);
+    color:rgb(1, 65, 8);
+    right: 50px;
+    color:white;
+    
+
+}
+.homebutton a{
+    text-decoration:none;
+    color:white;
+    padding: 20px;
+}
+.homebutton:hover{
+    background-color:rgb(56, 94, 244)
+}
