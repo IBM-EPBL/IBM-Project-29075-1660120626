@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Customer Care Registry</title>
+    <link rel="stylesheet" href="../static/style.css">
+    
+</head>
+<body>
+  <style type="text/css">
+    .homebutton{
+    
+    padding: 10px;
+    background-color:rgb(159, 249, 159);
+    color:rgb(1, 65, 8);
+
+}
+  </style>
+ 
+  <h1 style="font-size: 30px;">Customer Care Registry</h1>
+  <br>
+    
+    <div class="main-block">
+      
+        <h1>File Complaint</h1>
+        <form action="{{ url_for('addcomplaint') }}" method="POST">
+          
+          <input type="text" name="customer" id="detail" value="{{nam}}" required/>
+          <input type="text" name="complaint" id="detail" placeholder="Complaint" required/>
+
+          <input type="text" name="detail" id="detail" placeholder="Complaint Detail" required/>
+          <hr>
+          
+          <hr>
+          <div class="btn-block">
+            <button type="submit" href="/">File Complaint</button>
+          </div>
+        </form>
+      </div>
+</body>
+</html>

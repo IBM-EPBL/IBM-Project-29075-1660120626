@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Care Registry</title>
+     <link rel="stylesheet" href="../static/index.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body><div class="homebutton"><a href="{{url_for('userlogin')}}">LOG OUT</a></div>
+   
+        <h1 style="font-size: 30px;">Customer Care Registry</h1>
+        <br>
+        <div class="flash" id="para">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+           <ul>
+              {% for message in messages %}
+              <h4>{{ message }}</h4>
+              {% endfor %}
+           </ul>
+        {% endif %}
+     {% endwith %}
+    </div>
+        <h3 style="text-align: center;">Hello {{name}}.....!</h3>
+        <div class="box">
+            <a href="{{ url_for('file_complaint',name=name) }}">File Complaint</a>
+            <a href="{{ url_for('view_status',name=name) }}">View Status</a>
+    
+        </div>
+        
+     
+    </body>
+    
+</html>
+<script>
+    $(document).ready(function(){
+      $(".flash").hide(3200);
+    });
+  </script>

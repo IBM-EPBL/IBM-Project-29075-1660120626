@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Care Registry</title>
+  <link rel="stylesheet" href="../static/style.css">
+  <link rel="stylesheet" href="../static/index.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+  <body>
+    <h1 style="font-size: 30px;">Customer Care Registry</h1>
+    <br>
+  
+    <div class="main-block">
+        <h1>User Login</h1>
+        
+        <form action="{{ url_for('loguser') }}" method="POST">
+          
+          
+          <input type="text" name="name" id="name" placeholder="Name" required/>
+         
+          <input type="password" name="password" id="passsword" placeholder="Password" required/>
+          <hr>
+          
+          <hr>
+          <div class="btn-block">
+            <button type="submit" href="/">login</button>
+          </div>
+          <a href="{{ url_for('new')}}">New User...?</a>
+        </form>
+        
+      </div>
+      
+    
+  
+</body>
+</html>
+<script>
+  $(document).ready(function(){
+    $(".flash").hide(3000);
+  });
+</script>
