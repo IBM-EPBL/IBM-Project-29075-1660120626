@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Care Registry</title>
+    <link rel="stylesheet" href="../static/table.css">
+    <link rel="stylesheet" href="../static/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="homebutton"><a href="{{url_for('admin')}}">Admin Home</a></div>
+    <style>
+        #but{
+            padding:10px 30px;
+            background-color:rgb(98, 98, 246);
+            color:white;
+            border:none;
+        
+        }
+        #cars{
+            padding:10px
+        }
+        option{
+            padding:10px
+        }
+    </style>
+    
+    
+
+    <h1 style="font-size: 30px;">Customer Care Registry</h1>
+    <br>
+    <div class="flash" id="para">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+           <ul>
+              {% for message in messages %}
+              <h4>{{ message }}</h4>          {% endfor %}
+           </ul>
+        {% endif %}
+     {% endwith %}
+    </div>
+            <table class="table table-bordered" id="customers">
+                <thead>
+                    <tr>
+                    <th>S.No</th>
+                    <th>Complaint ID</th>
+                    <th>Customer Name</th>
+                    <th>Complaint</th>
+                    <th>Complaint Detail</th>
+                    <th>Assign Agent </th>
+
+                </tr>
+                </thead>
+                <tbody>
+                    {% if data | length == 0  %}
+                    <td>1.</td>
+                    <td>No Record</td>
+                    <td>No Record</td>
+                    <td>No Record</td>
+                    <td>No Record</td>
+                    <td>No Record</td>
+                    {% else %}
+                    {% for res in data %}
+                        {% set i=loop.index %}
+                    <tr>
+                        <td>{{i}}</td>
+                        <td>{{res['COMPLAINT_ID']}}</td>
+                        <td>{{res['CUSTOMER_NAME']}}</td>
+                        <td>{{res['COMPLAINT']}}</td>
+                        <td>{{res['COMPLAINT_DETAIL']}}</td>
+                        <td >
+                            <form action="{{ url_for('addagentin') }}"  method="POST">
+                            
+                            <select id="cars" name="agent">
+                                {% for r in a %}
+                              <option value="{{r['NAME']}}">{{r['NAME']}}</option>
+                                {% endfor %}
+                            </select>
+                            <input type="hidden"  name="cid" value="{{res['COMPLAINT_ID']}}">
+                            <input type="submit" VALUE="Assign" id="but">
+                        </form></td>
+                    </tr>
+                    {% endfor %}
+                   
+                    {% endif %}
+                </tbody>
+            </table>
+           
+</body>
+</html>
+<script>
+    $(document).ready(function(){
+      $(".flash").hide(3000);
+    });
+  </script>
